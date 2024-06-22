@@ -1,4 +1,4 @@
-# fr〇〇〇で楽に勤怠入力できるようにするやつ
+# fr〇〇〇で楽に勤怠入力できるようにするChrome拡張機能
 
 ⇩のページで動作する
 ![static/page.png](static/page.png)

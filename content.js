@@ -1,6 +1,5 @@
-console.log("Content script loaded on specified pages");
-
 chrome.runtime.onMessage.addListener(function (message) {
+  // メッセージが受信されたときの処理
   if (message.action === 'setTimes') {
     const { clockIn, clockOut, breakStart, breakEnd } = message.times;
     const inHourField = document.getElementById('approval-request-fields-segment-clock-in-at-hour-0');
@@ -45,8 +44,6 @@ if (hash) {
   if (hashParams.get("type") === "ApprovalRequest::WorkTime") {
     // ページが完全に読み込まれるのを待つ
     window.addEventListener("load", function () {
-
-      chrome.runtime.sendMessage({ action: 'openPopup' });
       // 追加ボタンをクリック
       const add_button = document.querySelector(
         "button.vb-button.vb-button--appearanceSecondary.vb-button--small.vb-button--rightIcon .vb-button__text"
@@ -55,7 +52,7 @@ if (hash) {
         add_button.parentElement.click();
       }
 
-      // 1秒待ってから休憩ボタンをクリック
+      // 1.5秒待ってから休憩ボタンをクリック
       setTimeout(function () {
         const add_rest_button = document.querySelector(
           'button[data-test="休憩を追加"]'

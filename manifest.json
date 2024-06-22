@@ -1,8 +1,8 @@
 {
     "manifest_version": 3,
-    "name": "freee勤怠入力ヘルパー",
+    "name": "frxxx勤怠入力",
     "version": "1.0.0",
-    "description": "休憩時間を追加して、HHMMで入力できるようにする",
+    "description": "休憩時間を追加して、hhmmで入力できるようにする",
     "permissions": [
         "activeTab",
         "scripting"

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Popup</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 5px 10px;
+    }
+
+    label {
+      display: block;
+      margin: 10px 0 5px;
+    }
+
+    .time-inputs {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .time-inputs input {
+      width: 50px;
+      padding: 5px;
+      font-size: 16px;
+      text-align: center;
+      border: 1px solid black;
+      border-radius: 1px;
+    }
+
+    .separator {
+      margin: 0 10px;
+    }
+
+    button.submit {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <form id="timeForm">
+    <label for="clockIn">出退勤</label>
+    <div class="time-inputs">
+      <input type="text" id="clockIn" class="input-time" name="clockIn" placeholder="hhmm" pattern="^[0-9]{1-4}$"
+        required>
+      <span class="separator">〜</span>
+      <input type="text" id="clockOut" class="input-time" name="clockOut" placeholder="hhmm" pattern="^[0-9]{1-4}$"
+        required>
+    </div>
+
+    <label for="breakStart">休憩</label>
+    <div class="time-inputs">
+      <input type="text" id="breakStart" class="input-time" name="breakStart" placeholder="hhmm" pattern="^[0-9]{1-4}$"
+        required>
+      <span class="separator">〜</span>
+      <input type="text" id="breakEnd" class="input-time" name="breakEnd" placeholder="hhmm" pattern="^[0-9]{1-4}$"
+        required>
+    </div>
+    <button class="submit" type="submit">送信</button>
+  </form>
+  <script src="popup.js"></script>
+  <script>
+    // ポップアップが開いたときに最初のインプットにフォーカスを設定
+    document.addEventListener('DOMContentLoaded', function () {
+      document.getElementById('clockIn').focus();
+    });
+  </script>
+</body>
+
+</html>
